@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -112,11 +115,14 @@ public class Factorial extends javax.swing.JFrame {
        int resultado = 1;
        int a=0;
        dato=Integer.parseInt(jDato.getText());
+        if (dato<0) {
+            JOptionPane.showMessageDialog(this,"Poner números mayores a 0");
+        }else{
         for (int i = 1; i < dato; i++) {
             resultado=resultado*(dato-a);
             a++;
         }
-        jResultado.setText(Integer.toString(resultado));
+        jResultado.setText(Integer.toString(resultado));}
     }//GEN-LAST:event_jFactorializarActionPerformed
 
     /**
