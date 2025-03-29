@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author KevinGamer
@@ -111,18 +110,27 @@ public class Factorial extends javax.swing.JFrame {
 
     private void jFactorializarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFactorializarActionPerformed
         // TODO add your handling code here:
-       int dato;
-       int resultado = 1;
-       int a=0;
-       dato=Integer.parseInt(jDato.getText());
-        if (dato<0) {
-            JOptionPane.showMessageDialog(this,"Poner números mayores a 0");
-        }else{
-        for (int i = 1; i < dato; i++) {
-            resultado=resultado*(dato-a);
-            a++;
+        int dato;
+        int resultado = 1;
+        int a = 0;
+        try {
+            dato = Integer.parseInt(jDato.getText());
+
+            if (dato < 0) {
+                JOptionPane.showMessageDialog(this, "Poner números mayores a 0");
+            } else {
+                for (int i = 1; i < dato; i++) {
+                    resultado = resultado * (dato - a);
+                    a++;
+                }
+                jResultado.setText(Integer.toString(resultado));
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese solo números enteros.");
         }
-        jResultado.setText(Integer.toString(resultado));}
+
+        // do stuff here
+
     }//GEN-LAST:event_jFactorializarActionPerformed
 
     /**
