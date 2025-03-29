@@ -44,6 +44,11 @@ public class Factorial extends javax.swing.JFrame {
 
         jFactorializar.setFont(new java.awt.Font("Upheaval TT (BRK)", 0, 24)); // NOI18N
         jFactorializar.setText("Sacar factorial");
+        jFactorializar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFactorializarActionPerformed(evt);
+            }
+        });
 
         jDato.setFont(new java.awt.Font("Upheaval TT (BRK)", 0, 24)); // NOI18N
 
@@ -100,6 +105,19 @@ public class Factorial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFactorializarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFactorializarActionPerformed
+        // TODO add your handling code here:
+       int dato;
+       int resultado = 1;
+       int a=0;
+       dato=Integer.parseInt(jDato.getText());
+        for (int i = 1; i < dato; i++) {
+            resultado=resultado*(dato-a);
+            a++;
+        }
+        jResultado.setText(Integer.toString(resultado));
+    }//GEN-LAST:event_jFactorializarActionPerformed
 
     /**
      * @param args the command line arguments
